@@ -1,0 +1,33 @@
+zip(list_a, list_b)
+*arg => arg is a list of arguments
+**kwarg => kwarg is a dict of key-value
+- some important modules: collections, datetime, logging, math, numpy, os, pip, sys
+- module: single file .py;
+- package: a directory having multiple python script and __init__.py
+
+Python class:
+* special methods:
+- constructor: def __init__(self, *arg)
+- Addition: def __add__(self, *arg)
+- print object: def __str__(self, *arg)
+- subtraction: def __sub__(self, *arg)
+- multiplication: def __mul__(self, *arg)
+- true division /: def __truediv__()
+- floor division //: def __floordiv__()
+- remainder %: def __mod__()
+- power **: def __pow__()
+- bitwise AND &: def __and__()
+- bitwise OR |: def __or__()
+- bitwise XOR ^: def __xor__()
+- greater than >: def __gt__()
+- greater than or equal to >=: def __ge__()
+- less than <: def __lt__()
+- less than or equal <=: def __le__()
+- equal to ==: __eq__()
+- not equal to !=: __ne__()
+
+@property: make a function to be used as a property
+
+python generator: yield.    normal function returns some value; generator yields some value
+-a generator automatically implements next() and __iter__()
+-each time next() is called, the generator resumes where it left off

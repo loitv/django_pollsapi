@@ -1,0 +1,38 @@
+retrieve a single object:
+	Post.objects.get()
+retrieve all objects:
+	Post.objects.all()
+*** Django QuerySets are lazy; they are only evaluated when they are forced to (set the QuerySet to a variable)
+
+filter a QuerySet:
+	Post.objects.filter(publish__year=2017, author__username='admin')
+exclude certain results from your QuerySet:
+	Post.objects.filter(publish__year=2017) \
+            .exclude(title__startswith='Why')
+order results (ascending/descending):
+	Post.objects.order_by('title')
+	Post.objects.order_by('-title')
+delete an object:
+	post = Post.objects.get(id=1)
+	post.delete()
+*** QuerySet will not hit the database until it is evaluated. it is only evaluated in the following cases:
+	The first time you iterate over them
+	When you slice them, for instance, Post.objects.all()[:3]
+	When you pickle or cache them
+	When you call repr() or len() on them
+	When you explicitly call list() on them
+	When you test them in a statement, such as bool(), or , and, or if
+*** objects is the default manager of every model, but we can also define custom managers for our models
+*** a slug (a string consisting of ASCII letters or numbers, plus the hyphen and underscore characters)
+	https://docs.djangoproject.com/en/2.0/topics/http/urls/#path-converters
+
+**Canonical URLs for models:
+
+**DJANGO TEMPLATES:
+	{% load static %} : load the static template tags
+	{% extends "blog/base.html" %}: inherit from the blog/base.html template
+	{{ post.body|truncatewords:30|linebreaks }}:
+		truncatewords: truncates the value to the number of words specified
+		linebreaks: converts the output into HTML line breaks
+
+pass flat=True to it to get a flat list like [1, 2, 3, ...].
